@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老丁高质水果店</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 顶部水果装饰 -->
+    <div class="fruit-strip">
+        🍎　🍌　🍇　🍓　🍊　🍉　🍍　🥝　🍒　🍋
+    </div>
+
+    <!-- 网站顶部 -->
+    <header>
+        <div class="brand">
+            <img src="logo.png" alt="老丁水果店原版Logo" class="logo">
+
+            <div>
+                <h1>老丁高质水果店</h1>
+                <p>LAO DING FRUIT STORE</p>
+            </div>
+        </div>
+
+        <div class="account">
+            <button onclick="maintenance()">登录</button>
+            <button onclick="maintenance()">注册</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 首页 -->
+        <section id="home" class="page">
+            <div class="welcome-box">
+
+                <div class="decoration">
+                    🍎　🍊　🍓　🍇　🍉
+                </div>
+
+                <h2>Welcome</h2>
+
+                <div class="exclamation">!!!</div>
+
+                <!-- 直接显示自己的Logo，不重绘 -->
+                <img src="logo.png" alt="老丁水果店Logo"
+                     class="welcome-logo">
+
+                <p class="slogan">
+                    新鲜水果 · 健康生活 · 甜蜜每一天
+                </p>
+            </div>
+
+            <div class="navigation">
+                <button onclick="openShop('到店自取')">
+                    🏪 到店自取
+                </button>
+
+                <button onclick="openShop('外卖到家')">
+                    🛵 外卖到家
+                </button>
+
+                <button onclick="showPage('member')">
+                    👑 会员充值
+                </button>
+            </div>
+        </section>
+
+        <!-- 水果商城 -->
+        <section id="shop" class="page hidden">
+
+            <div class="address">
+                选择地址：
+                <select>
+                    <option>老丁水果店（梁山店）</option>
+                </select>
+                <span id="shopMode">到店自取</span>
+            </div>
+
+            <div class="shop-layout">
+
+                <!-- 左侧水果分类 -->
+                <aside class="sidebar">
+                    <h3>🍃 水果分类</h3>
+                    <div id="categories"></div>
+                </aside>
+
+                <!-- 中间商品区域 -->
+                <section class="products-area">
+                    <h2 id="categoryTitle">
+                        请选择你要买的水果类别
+                    </h2>
+
+                    <div id="products">
+                        <p class="empty">
+                            🍎　🍊　🍇<br><br>
+                            请选择你要买的水果类别
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- 会员充值 -->
+        <section id="member" class="page hidden">
+            <div class="member-box">
+                <h2>👑 会员充值中心</h2>
+                <p>充值会员，享受更多甜蜜！</p>
+
+                <div class="bonus">
+                    🎁 充值1000到账1001
+                </div>
+
+                <div class="recharge-options">
+                    <button onclick="maintenance()">
+                        充值100元
+                    </button>
+
+                    <button onclick="maintenance()">
+                        充值300元
+                    </button>
+
+                    <button onclick="maintenance()">
+                        充值1000元
+                    </button>
+                </div>
+
+                <button onclick="showPage('home')">
+                    返回首页
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 底部购物车 -->
+    <div id="cartBar" class="cart-bar hidden">
+        <span>🛒 购物车</span>
+
+        <span>
+            已选 <b id="cartCount">0</b> 斤
+        </span>
+
+        <strong id="cartTotal">¥0.00</strong>
+
+        <button onclick="toggleCart()">
+            查看购物车
+        </button>
+
+        <button onclick="maintenance()">
+            付款
+        </button>
+    </div>
+
+    <!-- 购物车详情 -->
+    <div id="cartPanel" class="cart-panel hidden">
+        <h3>🧺 我的购物车</h3>
+        <div id="cartItems"></div>
+        <button onclick="toggleCart()">关闭</button>
+    </div>
+
+    <!-- 维修提示 -->
+    <div id="maintenanceBox" class="modal hidden">
+        <div class="modal-content">
+            <div>🧑‍🔧</div>
+            <h2>网站维修中</h2>
+            <p>该功能正在维修中，敬请谅解！</p>
+            <button onclick="closeMaintenance()">知道了</button>
+        </div>
+    </div>
+
+    <footer>
+        老丁高质水果店 · LAO DING FRUIT STORE
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
